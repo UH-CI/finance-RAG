@@ -379,6 +379,11 @@ SUMMARY for HB300_CD1:
   Percentage with unknowns: 32.7%
   Saved to: ./model_ouputs/processed_documents/processed_HB300_CD1_geminiV2.json
 
+
+
+
+
+
 ==================================================
 Models 3 and 4 use previous page and 3 recent budget items as context.
 
@@ -400,6 +405,11 @@ SUMMARY for HB300_HD1:
     appropriations_mof_2026_2027: 30
   Percentage with unknowns: 31.8%
   Saved to: ./model_ouputs/processed_documents/processed_HB300_HD1_geminiV3.json
+
+
+
+
+
 
 Model Version 4 -- This model uses camelot and pdfplumber to extract budget items.
 SUMMARY for HB300_HD1:

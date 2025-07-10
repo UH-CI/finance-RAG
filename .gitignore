@@ -14,5 +14,7 @@ __pycache__/
 # Database files
 *.sqlite3
 *.db
-chroma_db/
-src/chroma_db/
+# Keep directory structure but ignore data contents
+src/chroma_db/data/*
+!src/chroma_db/data/.gitkeep
+src/chroma_db/chroma.sqlite3

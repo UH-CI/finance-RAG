@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Create required ChromaDB directories (data will be volume mounted or generated)
+# Create required ChromaDB directories AFTER copying code (to ensure they exist for volume mounts)
 RUN mkdir -p chroma_db/data && \
     chmod 755 chroma_db && \
     chmod 755 chroma_db/data
