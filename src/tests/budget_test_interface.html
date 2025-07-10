@@ -511,12 +511,40 @@
         </div>
 
         <div class="tabs">
-            <div class="tab active" onclick="switchTab('budget')">Budget Items Table</div>
-            <div class="tab" onclick="switchTab('chat')">Intelligent Query Chat</div>
+            <div class="tab active" onclick="switchTab('chat')">Intelligent Query Chat</div>
+            <div class="tab" onclick="switchTab('budget')">Budget Items Table</div>
+        </div>
+
+        <!-- Chat Tab -->
+        <div id="chat-tab" class="tab-content active">
+            <div class="preset-queries">
+                <h3>Quick Test Queries</h3>
+                <div class="preset-btn" onclick="sendPresetQuery('What is the total budget for education?')">Education Budget</div>
+                <div class="preset-btn" onclick="sendPresetQuery('How much funding does the Department of Health receive?')">Health Funding</div>
+                <div class="preset-btn" onclick="sendPresetQuery('What are the largest budget items?')">Largest Items</div>
+                <div class="preset-btn" onclick="sendPresetQuery('Show me transportation funding')">Transportation</div>
+                <div class="preset-btn" onclick="sendPresetQuery('What is funded by general funds?')">General Funds</div>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-bubble">
+                            <p>👋 Hello! I'm your House Finance assistant. Ask me anything about the budget data!</p>
+                            <p>Try asking about specific departments, funding sources, or budget amounts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" class="chat-input" placeholder="Ask about budget items, funding, departments..." onkeydown="handleChatEnterKey(event)">
+                    <button id="send-btn" class="send-btn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
         </div>
 
         <!-- Budget Items Tab -->
-        <div id="budget-tab" class="tab-content active">
+        <div id="budget-tab" class="tab-content">
             <div class="search-container">
                 <input type="text" id="search-input" class="search-input" placeholder="Enter search query and press Enter (e.g., 'education funding', 'health department')...">
                 <button id="search-btn" class="load-btn" onclick="performSearch()">Search</button>
@@ -640,34 +668,6 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Chat Tab -->
-        <div id="chat-tab" class="tab-content">
-            <div class="preset-queries">
-                <h3>Quick Test Queries</h3>
-                <div class="preset-btn" onclick="sendPresetQuery('What is the total budget for education?')">Education Budget</div>
-                <div class="preset-btn" onclick="sendPresetQuery('How much funding does the Department of Health receive?')">Health Funding</div>
-                <div class="preset-btn" onclick="sendPresetQuery('What are the largest budget items?')">Largest Items</div>
-                <div class="preset-btn" onclick="sendPresetQuery('Show me transportation funding')">Transportation</div>
-                <div class="preset-btn" onclick="sendPresetQuery('What is funded by general funds?')">General Funds</div>
-            </div>
-
-            <div class="chat-container">
-                <div class="chat-messages" id="chat-messages">
-                    <div class="message bot-message">
-                        <div class="message-bubble">
-                            <p>👋 Hello! I'm your House Finance assistant. Ask me anything about the budget data!</p>
-                            <p>Try asking about specific departments, funding sources, or budget amounts.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="chat-input-container">
-                    <input type="text" id="chat-input" class="chat-input" placeholder="Ask about budget items, funding, departments..." onkeydown="handleChatEnterKey(event)">
-                    <button id="send-btn" class="send-btn" onclick="sendMessage()">Send</button>
                 </div>
             </div>
         </div>
