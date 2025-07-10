@@ -16,6 +16,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
+# Create required ChromaDB directories (data will be volume mounted or generated)
+RUN mkdir -p chroma_db/data && \
+    chmod 755 chroma_db && \
+    chmod 755 chroma_db/data
+
 # Note: ChromaDB data will be provided via volume mount in production
 # (chroma_db/ should be excluded via .dockerignore to avoid conflicts)
 
